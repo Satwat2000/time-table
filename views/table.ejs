@@ -1,0 +1,96 @@
+<%- include("partials/hedder") -%>
+
+<% var time = ["7:45-8:45", "8:45-9:45", "9:45-10:45", "10:45-11:45", "11:45-12:45", "12:45-1:45", "1:45-2:45", "2:45-3:45", "3:45-4:45", "4:45-5:45", "5:45-6:45"] %>
+<% var Days = ["Mon", "Tue", "Wed", "Thu", "Fri"]; %>
+
+
+<div class="row D">
+    <div class="col-1 top">Day-Time</div>
+    <% time.forEach(function(elem){ %>
+    <div class="col-1 border top text-center">
+        <%= elem %>
+    </div>
+    <% })%>
+</div>
+
+
+<% for(let i=1; i<=5; i++){ %>
+<% let RC = "row D D"+i%>
+<div class="<%= RC %>">
+    <% console.log(RC) %>
+    <% for(let j=0 ;j<=11; j++){ %>
+    <% if(j==0){ %>
+    <% var CC = "col-1 day my-auto"; %>
+    <% var SU = Days[i-1]; %>
+    <% var SN=" "; %>
+    <% var TN=" "; %>
+    <% } else{ %>
+    <% var CC = "col-1 T"+ j+" border T-Table"; %>
+    <% } %>
+    <% console.log("...."+CC) %>
+    <div class="<%= CC  %> text-center">
+        <div class="<%= SN  %>">.</div>
+        <div class="<%= SU  %>">.</div>
+        <div class="<%= TN  %>">.</div>
+    </div>
+    <% } %>
+</div>
+<% } %>
+
+<form action="/" method="post" class="container entry">
+    <div class="D row text-center justify-content-center">
+        <div class="col-3 form-group">
+            <div class="form-group">
+                <label for="S">Subject Name</label>
+                <input type="text" name="SName:" id="S" class="form-control">
+            </div>
+            <div class="form-group mt-1">
+                <label class="" for="C">Credits</label>
+                <input class="form-control" type="number" name="Credits" id="C" max="12" min=0>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="T">Teacher's Name</label>
+                <input type="text" name="TName: " id="T" class="form-control">
+            </div>
+            <div class="form-group">
+                <input id="lab" class="form-check-input" type="checkbox">
+                <label class="form-check-label" for="lab">Show Labs</label>
+            </div>
+            <div class="form-check-inline">
+                <input id="lab" class="btn btn-lg" type="submit" value="Submit">
+                <!-- <label class="form-check-label" for="lab">Show Labs</label> -->
+            </div>
+        </div>
+        <div class="col-3 form-group">
+            <div class="form-group">
+                <label class="" for="slot">Slot</label>
+                <select class="form-control custom-select" id="slot">
+                    <option selected>Choose...</option>
+                    <option value="S1">Slot-S1</option>
+                    <option value="S2">Slot-S2</option>
+                    <option value="S3">Slot-S3</option>
+                    <option value="S4">Slot-S4</option>
+                    <option value="S5">Slot-S5</option>
+                    <option value="S6">Slot-S6</option>
+                    <option value="S7">Slot-S7</option>
+                    <option value="S8">Slot-S8</option>
+                    <option value="S9">Slot-S9</option>
+                    <option value="S10">Slot-S10</option>
+                    <option value="S11">Slot-S11</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="" for="slot">LAB Slot</label>
+                <select class="form-control custom-select" id="slot">
+                    <option selected>Choose...</option>
+                    <option value="S1">Slot-S111</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+<%- include("partials/footer") -%>

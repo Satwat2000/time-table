@@ -1,0 +1,35 @@
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    addClasses = function (day, slot) {
+        console.log(day, slot);
+        for (let i = 0; i < day.length; i += 2) {
+            str = ".D" + day[i] + " .T" + day[i + 1];
+            console.log(str);
+            $(str).addClass(slot);
+        }
+
+    };
+
+
+    $(document).ready(function () {
+        console.log("CLicked");
+
+        addClasses([<%= Slots.S1 %>], "S1");
+        addClasses([<%= Slots.S2 %>], "S2")
+        addClasses([<%= Slots.S3 %>], "S3")
+        addClasses([<%= Slots.S4 %>], "S4")
+        addClasses([<%= Slots.S5 %>], "S5")
+        addClasses([<%= Slots.S6 %>], "S6")
+        addClasses([<%= Slots.S7 %>], "S7")
+        addClasses([<%= Slots.S8 %>], "S8")
+        addClasses([<%= Slots.S9 %>], "S9")
+        addClasses([<%= Slots.S10 %>], "S10")
+        addClasses([<%= Slots.S11 %>], "S11")
+    });
+
+
+</script>
+
+
+</html>
